@@ -1,13 +1,9 @@
 .demo {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
-picture {
+.demo > div > div {
   width: 50%;
-}
-
-.button-container {
-  width: 50%;
-  color: red;
 }
