@@ -16,8 +16,8 @@
 
 .demo > div {
   width: calc(50% - 25px);
-  display: flex;
-  flex-flow: row nowrap;
+  /* display: flex;
+  flex-flow: row nowrap; */
   border-left: 3px solid #d7d7d7;
   padding: 0 0 0 20px;
   position: relative;
