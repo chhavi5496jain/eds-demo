@@ -34,6 +34,7 @@
 .demo > div > div > p:nth-child(1) {
   background-color: grey;
   display: inline-block;
+  margin: 0;
 }
 /* .button-container > a {
   margin: 0;
