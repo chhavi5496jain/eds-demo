@@ -31,7 +31,7 @@
 .demo > div > div {
   width: 50%;
 }
-.demo > div > div > p :first-child {
+.demo > div > div > p {
   background-color: grey;
   display: inline-block;
 }
