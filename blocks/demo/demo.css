@@ -31,6 +31,10 @@
 .demo > div > div {
   width: 50%;
 }
+.demo > div > div > p :first-child {
+  background-color: grey;
+  display: inline-block;
+}
 /* .button-container > a {
   margin: 0;
   background-color: none;
