@@ -20,13 +20,16 @@
 
 .demo > div {
   width: calc(50% - 25px);
-  /* display: flex;
-  flex-flow: row nowrap; */
+  display: flex;
+  flex-flow: row nowrap;
   border-left: 3px solid #d7d7d7;
   padding: 0 0 0 20px;
   position: relative;
   transition: all 0.5s;
   margin-bottom: 40px;
+}
+.demo > div > div {
+  width: 50%;
 }
 /* .button-container > a {
   margin: 0;
