@@ -2,3 +2,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+picture {
+  width: 50%;
+}
+
+.button-container {
+  width: 50%;
+}
