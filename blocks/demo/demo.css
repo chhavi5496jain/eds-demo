@@ -1,9 +1,26 @@
 .demo {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   width: 100%;
 }
+.block {
+  padding: 0;
+  margin: 0;
+  line-height: 1.3em;
+  font-size: 14px;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 
-.demo > div > div {
-  width: 50%;
+.demo > div {
+  width: calc(50% - 25px);
+  display: flex;
+  flex-flow: row nowrap;
+  border-left: 3px solid #d7d7d7;
+  padding: 0 0 0 20px;
+  position: relative;
+  transition: all 0.5s;
+  margin-bottom: 40px;
 }
