@@ -24,3 +24,8 @@
   transition: all 0.5s;
   margin-bottom: 40px;
 }
+.button-container > a {
+  margin: 0;
+  background-color: none;
+  color: red;
+}
