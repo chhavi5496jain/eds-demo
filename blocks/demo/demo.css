@@ -41,6 +41,9 @@
   color: #666;
   margin-bottom: 0;
 }
+.demo > div > div > p:nth-child(3) {
+  margin: 0;
+}
 /* .button-container > a {
   margin: 0;
   background-color: none;
