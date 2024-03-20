@@ -52,12 +52,15 @@
   margin-top: 0;
 }
 
-/* main .black {
+main .black {
   background-color: blue;
+}
+.black {
+  background-color: red;
 }
 main .white-text {
   color: white;
-} */
+}
 /* .button-container > a {
   margin: 0;
   background-color: none;
