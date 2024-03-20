@@ -136,3 +136,7 @@
 #join-us {
   font-size: 25px;
 }
+
+.custom > .cms-content-wrapper > .cms-content {
+  display: flex;
+}
