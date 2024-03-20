@@ -48,15 +48,16 @@
   padding-top: 8px;
 }
 
-.columns > div > div > h2 {
+/* .columns > div > div > h2 {
   margin-top: 0;
-}
+} */
 
 main .black {
   background-color: blue;
 }
-.black > .columns-wrapper > .columns > div {
-  display: block;
+
+.black > .columns-wrapper > .columns > div > div {
+  margin-top: 0;
 }
 
 main .white-text {
