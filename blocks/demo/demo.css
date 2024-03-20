@@ -119,5 +119,6 @@ main .white-text {
 }
 
 .joinus .columns-wrapper > .columns > div > div {
-  border-left: 3px solid #000;
+  border-left: 1px solid #000;
+  padding-left: 50px;
 }
