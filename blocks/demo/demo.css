@@ -117,7 +117,9 @@ main .black {
 main .white-text {
   color: white;
 }
-
+main .joinus {
+  display: none;
+}
 .joinus .columns-wrapper > .columns > div > div {
   border-left: 1px solid #000;
 }
