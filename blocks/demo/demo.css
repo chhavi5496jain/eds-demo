@@ -51,6 +51,9 @@
 main .black {
   background-color: blue;
 }
+main .white-text {
+  color: white;
+}
 /* .button-container > a {
   margin: 0;
   background-color: none;
