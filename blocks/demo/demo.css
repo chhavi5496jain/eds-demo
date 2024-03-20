@@ -117,3 +117,7 @@ main .black {
 main .white-text {
   color: white;
 }
+
+main .joinUs .columns-wrapper > .columns > div :nth-child(1) {
+  border-left: 1px solid #000;
+}
