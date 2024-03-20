@@ -48,6 +48,10 @@
   padding-top: 8px;
 }
 
+.columns > div > div > h2 {
+  margin-top: 0;
+}
+
 /* main .black {
   background-color: blue;
 }
