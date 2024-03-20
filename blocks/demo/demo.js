@@ -1,4 +1,4 @@
-export default function decorate(blocks) {
-  const customClass = blocks.children[2];
+export default function decorate(section) {
+  const customClass = section.children[0];
   customClass.classList.add("hero-video-banner");
 }
