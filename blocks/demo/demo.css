@@ -118,7 +118,7 @@ main .white-text {
   color: white;
 }
 
-.joinus .columns-wrapper > .columns > div > div {
+.joinus .columns-wrapper > .columns > div :nth-child(1) {
   border-left: 1px solid #000;
   padding-left: 50px;
 }
