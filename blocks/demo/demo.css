@@ -51,6 +51,12 @@
   text-align: center;
 }
 
+/*header*/
+
+.header {
+  background-color: #b94a48;
+}
+
 .demo {
   /* display: flex; */
   justify-content: space-between;
