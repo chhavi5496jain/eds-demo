@@ -59,17 +59,10 @@ main .black {
 .black > .columns-wrapper > .columns > div > div {
   margin-top: 0;
 }
+.black > .columns-wrapper > .columns > div > div > h2 {
+  font-size: 25px;
+}
 
 main .white-text {
   color: white;
 }
-/* .button-container > a {
-  margin: 0;
-  background-color: none;
-  color: red;
-}
-p > a {
-  margin: 0;
-  background-color: none;
-  color: red;
-} */
