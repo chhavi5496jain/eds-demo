@@ -101,10 +101,6 @@
   margin-top: 0;
 } */
 
-main .black {
-  background-color: blue;
-}
-
 .black > .columns-wrapper > .columns > div > div {
   margin-top: 0;
 }
@@ -113,9 +109,6 @@ main .black {
 }
 .black > .columns-wrapper > .columns > div > div > p {
   font-size: var(--fz);
-}
-main .white-text {
-  color: white;
 }
 
 .joinus .columns-wrapper > .columns > div {
