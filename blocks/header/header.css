@@ -7,7 +7,7 @@
 }
 .header {
   box-sizing: border-box;
-  display: grid;
+  display: block;
 
   margin: auto;
   max-width: 1264px;
@@ -31,7 +31,4 @@ li a {
 a:hover {
   color: blue !important;
   text-decoration: none;
-}
-.block {
-  display: block;
 }
