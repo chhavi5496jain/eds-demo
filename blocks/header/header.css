@@ -39,5 +39,5 @@ a:hover {
   color: black !important;
 }
 .hidden {
-  top: -100px; /* Adjust this value according to your header's height */
+  opacity: 0;
 }

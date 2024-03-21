@@ -5,6 +5,9 @@ import { loadFragment } from "../fragment/fragment.js";
  * loads and decorates the footer
  * @param {Element} block The footer block element
  */
+let lastScrollTop = 0;
+const header = document.getElementById("header");
+
 export default async function decorate(block) {
   const headerMeta = getMetadata("nav");
   block.textContent = "";
@@ -28,14 +31,6 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) header.append(fragment.firstElementChild);
 
   block.append(header);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Variables to keep track of scrolling
-  let lastScrollTop = 0;
-  const header = document.getElementById("header");
-
-  // Function to handle scroll event
   function onScroll() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -51,4 +46,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Event listener for scroll
   window.addEventListener("scroll", onScroll);
-});
+}
