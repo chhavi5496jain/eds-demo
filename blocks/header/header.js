@@ -8,10 +8,7 @@ import { loadFragment } from "../fragment/fragment.js";
 
 export default async function decorate(block) {
   // Get the header element
-  const header1 = document.getElementsByClassName("header-wrapper");
 
-  // Get the first section
-  const firstSection = document.getElementById("demo");
   const headerMeta = getMetadata("nav");
   block.textContent = "";
 
@@ -35,20 +32,31 @@ export default async function decorate(block) {
 
   block.append(header);
 
-  function onScroll() {
-    // Get the scroll position
-    const scrollPosition = window.scrollY || window.pageYOffset;
+  document.addEventListener("DOMContentLoaded", function () {
+    const header1 = document.getElementsByClassName("header-wrapper");
 
-    // Check if the scroll position is below the first section
-    if (scrollPosition >= firstSection.getBoundingClientRect().bottom) {
-      // Add a class to change the header background color
-      header1.classList.add("header-white");
-    } else {
-      // Remove the class to revert the header background color
-      header1.classList.remove("header-white");
+    // Get the first section
+    const firstSection = document.getElementById("demo");
+
+    // Function to handle scroll event
+    function onScroll() {
+      // Get the scroll position
+      const scrollPosition = window.scrollY || window.pageYOffset;
+
+      // Check if the first section exists
+      if (firstSection) {
+        // Check if the scroll position is below the first section
+        if (scrollPosition >= firstSection.getBoundingClientRect().bottom) {
+          // Add a class to change the header background color
+          header1.classList.add("header-white");
+        } else {
+          // Remove the class to revert the header background color
+          header1.classList.remove("header-white");
+        }
+      }
     }
-  }
 
-  // Add scroll event listener
-  window.addEventListener("scroll", onScroll);
+    // Add scroll event listener
+    window.addEventListener("scroll", onScroll);
+  });
 }
