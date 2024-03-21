@@ -30,22 +30,25 @@ export default async function decorate(block) {
   block.append(header);
 }
 
-let lastScrollTop = 0;
-const header = document.getElementById("header");
+document.addEventListener("DOMContentLoaded", function () {
+  // Variables to keep track of scrolling
+  let lastScrollTop = 0;
+  const header = document.getElementById("header");
 
-// Function to handle scroll event
-function onScroll() {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  // Function to handle scroll event
+  function onScroll() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (scrollTop > lastScrollTop) {
-    // Scrolling down
-    header.classList.add("hidden");
-  } else {
-    // Scrolling up
-    header.classList.remove("hidden");
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down
+      header.classList.add("hidden");
+    } else {
+      // Scrolling up
+      header.classList.remove("hidden");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
   }
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
-}
 
-// Event listener for scroll
-window.addEventListener("scroll", onScroll);
+  // Event listener for scroll
+  window.addEventListener("scroll", onScroll);
+});
