@@ -28,6 +28,6 @@ li {
 li a {
   color: black !important;
 }
-li a :hover {
+li a &:hover {
   color: blue;
 }
