@@ -33,15 +33,15 @@ export default async function decorate(block) {
   document.addEventListener("DOMContentLoaded", function () {
     // Get the header element
     const header = document.getElementsByClassName("header-wrapper");
-
+    console.log("header");
     // Get the first section
-    const firstSection = document.getElementsByClassName("demo");
-
+    const firstSection = document.getElementsByClassName("custom");
+    console.log("custom");
     // Function to handle scroll event
     function onScroll() {
       // Get the scroll position
       const scrollPosition = window.scrollY || window.pageYOffset;
-
+      console.log("scroll");
       // Check if the scroll position is below the first section
       if (scrollPosition >= firstSection.clientHeight) {
         // Add a class to change the header background color
