@@ -33,13 +33,16 @@ var selectElement = document.createElement("select");
 
 // Define options
 var options = ["Option 1", "Option 2", "Option 3"];
-
+console.log("hi");
 // Loop through the options array and create option elements
 options.forEach(function (optionText) {
+  console.log("hello");
+
   var option = document.createElement("option");
   option.textContent = optionText;
   selectElement.appendChild(option);
 });
+console.log("hello");
 
 // Add event listener for change event
 selectElement.addEventListener("change", function (event) {
