@@ -1,12 +1,21 @@
 .header {
-  background-color: #b94a48;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 ul {
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  padding: 0;
 }
 li {
   margin-right: 40px;
+}
+li a {
+  color: black;
+}
+li a :hover {
+  color: blue;
 }
