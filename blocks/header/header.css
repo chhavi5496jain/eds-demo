@@ -1,7 +1,10 @@
 .header {
+  position: fixed;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  transition: background 0.5s ease-out 0.3s;
 }
 
 ul {
