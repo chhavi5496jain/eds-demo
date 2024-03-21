@@ -2,13 +2,11 @@
   width: 100%;
   z-index: 2;
   position: fixed;
-  background-color: white;
+  /* background-color: white; */
   height: auto;
-
-  transition: opacity 3s;
 }
-.header-wrapper .hidden {
-  opacity: 0;
+.header-white {
+  background-color: white;
 }
 
 .header {

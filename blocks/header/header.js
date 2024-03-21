@@ -5,11 +5,6 @@ import { loadFragment } from "../fragment/fragment.js";
  * loads and decorates the footer
  * @param {Element} block The footer block element
  */
-let hasScrolledDown = false;
-
-let fadeTimer;
-
-const header = document.getElementsByClassName("header-wrapper");
 
 export default async function decorate(block) {
   const headerMeta = getMetadata("nav");
@@ -17,7 +12,10 @@ export default async function decorate(block) {
 
   // load footer fragment
   var currentPageUrl = window.location.href;
+  const header1 = document.getElementsByClassName("header-wrapper");
 
+  // Get the first section
+  const firstSection = document.getElementsByClassName("demo");
   let headerPath;
 
   if (currentPageUrl.includes("fr")) {
@@ -34,20 +32,21 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) header.append(fragment.firstElementChild);
 
   block.append(header);
+
   function onScroll() {
-    if (!hasScrolledDown) {
-      hasScrolledDown = true;
+    // Get the scroll position
+    const scrollPosition = window.scrollY || window.pageYOffset;
 
-      // Fading out the header
-      header.classList.add("hidden");
-
-      // Set a timeout to fade the header back in after 3 seconds
-      fadeTimer = setTimeout(() => {
-        header.classList.remove("hidden");
-      }, 3000);
+    // Check if the scroll position is below the first section
+    if (scrollPosition >= firstSection.clientHeight) {
+      // Add a class to change the header background color
+      header1.classList.add("header-white");
+    } else {
+      // Remove the class to revert the header background color
+      header1.classList.remove("header-white");
     }
   }
 
-  // Event listener for scroll
+  // Add scroll event listener
   window.addEventListener("scroll", onScroll);
 }
