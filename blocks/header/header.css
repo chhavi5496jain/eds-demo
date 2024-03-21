@@ -4,6 +4,7 @@
   position: fixed;
   /* background-color: white; */
   height: auto;
+  transition: background-color 0.3s;
 }
 .header-white {
   background-color: white;
