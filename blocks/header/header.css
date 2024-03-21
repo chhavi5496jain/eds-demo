@@ -1,7 +1,9 @@
 .header {
   background-color: #b94a48;
 }
-
+.container-wrapper {
+  display: none;
+}
 .nav
   > .container-wrapper
   > .container
