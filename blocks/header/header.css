@@ -28,7 +28,7 @@ li {
 li a {
   color: black !important;
 }
-li a &:hover {
+a:hover {
   color: blue !important;
-  text-decoration: done;
+  text-decoration: none;
 }
