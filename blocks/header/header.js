@@ -7,8 +7,6 @@ import { loadFragment } from "../fragment/fragment.js";
  */
 
 export default async function decorate(block) {
-  // Get the header element
-
   const headerMeta = getMetadata("nav");
   block.textContent = "";
 
@@ -32,31 +30,45 @@ export default async function decorate(block) {
 
   block.append(header);
 
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   const header1 = document.getElementsByClassName("header-wrapper");
+  // Create dropdown elements
+  const dropdownContainer = document.createElement("div");
+  dropdownContainer.classList.add("dropdown-container");
 
-  //   // Get the first section
-  //   const firstSection = document.getElementById("demo");
+  const dropdownButton = document.createElement("button");
+  dropdownButton.textContent = "Dropdown";
+  dropdownButton.classList.add("dropdown-button");
 
-  //   // Function to handle scroll event
-  //   function onScroll() {
-  //     // Get the scroll position
-  //     const scrollPosition = window.scrollY || window.pageYOffset;
+  const dropdownContent = document.createElement("div");
+  dropdownContent.classList.add("dropdown-content");
 
-  //     // Check if the first section exists
-  //     if (firstSection) {
-  //       // Check if the scroll position is below the first section
-  //       if (scrollPosition >= firstSection.getBoundingClientRect().bottom) {
-  //         // Add a class to change the header background color
-  //         header1.classList.add("header-white");
-  //       } else {
-  //         // Remove the class to revert the header background color
-  //         header1.classList.remove("header-white");
-  //       }
-  //     }
-  //   }
+  const option1 = document.createElement("a");
+  option1.textContent = "Option 1";
+  option1.href = "#";
 
-  //   // Add scroll event listener
-  //   window.addEventListener("scroll", onScroll);
-  // });
+  const option2 = document.createElement("a");
+  option2.textContent = "Option 2";
+  option2.href = "#";
+
+  dropdownContent.appendChild(option1);
+  dropdownContent.appendChild(option2);
+
+  dropdownContainer.appendChild(dropdownButton);
+  dropdownContainer.appendChild(dropdownContent);
+
+  // Append dropdown to the body
+  document.body.appendChild(dropdownContainer);
+
+  // Toggle dropdown menu
+  dropdownButton.addEventListener("click", function () {
+    dropdownContent.classList.toggle("show");
+  });
+
+  // Close dropdown menu if user clicks outside of it
+  window.addEventListener("click", function (event) {
+    if (!event.target.matches(".dropdown-button")) {
+      if (dropdownContent.classList.contains("show")) {
+        dropdownContent.classList.remove("show");
+      }
+    }
+  });
 }
