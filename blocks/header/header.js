@@ -55,8 +55,11 @@ export default async function decorate(block) {
   dropdownContainer.appendChild(dropdownButton);
   dropdownContainer.appendChild(dropdownContent);
 
-  // Append dropdown to the body
-  document.body.appendChild(dropdownContainer);
+  // Get the header element
+  const header1 = document.getElementById("header-wrapper");
+
+  // Append dropdown to the header
+  header1.appendChild(dropdownContainer);
 
   // Toggle dropdown menu
   dropdownButton.addEventListener("click", function () {
