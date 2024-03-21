@@ -29,3 +29,16 @@ export default async function decorate(block) {
 
   block.append(header);
 }
+// Create select element
+var select = document.createElement("select");
+
+// Create and add options
+var options = ["Option 1", "Option 2", "Option 3"];
+options.forEach(function (optionText) {
+  var option = document.createElement("option");
+  option.text = optionText;
+  select.add(option);
+});
+
+// Append select to body
+document.body.appendChild(select);
