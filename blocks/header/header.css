@@ -38,7 +38,7 @@ a:hover {
   color: blue !important;
   text-decoration: none;
 }
-.container-wrapper > .container > div :nth-child(2) > .button-container > a {
+.container > div:nth-child(2) > .button-container > a {
   background-color: transparent !important;
   color: black !important;
 }
