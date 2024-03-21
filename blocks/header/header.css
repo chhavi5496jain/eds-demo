@@ -43,8 +43,8 @@ a:hover {
   color: black !important;
 }
 .dropdown-container {
-  position: relative;
-  display: inline-block;
+  /* position: relative;
+  display: inline-block; */
 }
 
 .dropdown-button {
@@ -56,8 +56,8 @@ a:hover {
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
+  /* display: none;
+  position: absolute; */
   background-color: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
