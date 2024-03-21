@@ -34,6 +34,6 @@ a:hover {
   text-decoration: none;
 }
 .button-container a {
-  background: none;
-  color: black;
+  background-color: transparent;
+  color: black !important;
 }
