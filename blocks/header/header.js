@@ -7,6 +7,11 @@ import { loadFragment } from "../fragment/fragment.js";
  */
 
 export default async function decorate(block) {
+  // Get the header element
+  const header1 = document.getElementsByClassName("header-wrapper");
+
+  // Get the first section
+  const firstSection = document.getElementById("demo");
   const headerMeta = getMetadata("nav");
   block.textContent = "";
 
@@ -29,29 +34,21 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) header.append(fragment.firstElementChild);
 
   block.append(header);
-}
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the header element
-  const header = document.getElementsByClassName("header-wrapper");
-  console.log("header");
-  // Get the first section
-  const firstSection = document.getElementsByClassName("custom");
-  console.log("custom");
-  // Function to handle scroll event
+
   function onScroll() {
     // Get the scroll position
     const scrollPosition = window.scrollY || window.pageYOffset;
-    console.log("scroll");
+
     // Check if the scroll position is below the first section
-    if (scrollPosition >= firstSection.clientHeight) {
+    if (scrollPosition >= firstSection.getBoundingClientRect().bottom) {
       // Add a class to change the header background color
-      header.classList.add("header-white");
+      header1.classList.add("header-white");
     } else {
       // Remove the class to revert the header background color
-      header.classList.remove("header-white");
+      header1.classList.remove("header-white");
     }
   }
 
   // Add scroll event listener
   window.addEventListener("scroll", onScroll);
-});
+}
