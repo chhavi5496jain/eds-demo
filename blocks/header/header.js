@@ -8,7 +8,7 @@ import { loadFragment } from "../fragment/fragment.js";
 let lastScrollTop = 0;
 let fadeTimer;
 
-const header = document.getElementById("header");
+const header = document.getElementsByClassName("header-wrapper");
 
 export default async function decorate(block) {
   const headerMeta = getMetadata("nav");
@@ -44,7 +44,7 @@ export default async function decorate(block) {
       // Set timeout to remove the hidden class after 3 seconds
       fadeTimer = setTimeout(() => {
         header.classList.remove("hidden");
-      }, 3000);
+      }, 1000);
     } else {
       // Scrolling up
       header.classList.remove("hidden");
