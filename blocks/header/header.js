@@ -15,7 +15,7 @@ export default async function decorate(block) {
   const header1 = document.getElementsByClassName("header-wrapper");
 
   // Get the first section
-  const firstSection = document.getElementsByClassName("demo");
+  const firstSection = document.getElementsByClassName("custom");
   let headerPath;
 
   if (currentPageUrl.includes("fr")) {
