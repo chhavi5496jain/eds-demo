@@ -7,7 +7,7 @@
 .header {
   box-sizing: border-box;
   display: grid;
-
+  height: auto;
   margin: auto;
   max-width: 1264px;
 
