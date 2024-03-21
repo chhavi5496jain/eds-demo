@@ -1,29 +1,12 @@
 .header {
   background-color: #b94a48;
 }
-.container-wrapper {
-  display: none;
-}
-.nav
-  > .container-wrapper
-  > .container
-  > div
-  :nth-child(1)
-  > div
-  :nth-child(2)
-  > ul {
+
+ul {
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
 }
-.nav
-  > .container-wrapper
-  > .container
-  > div
-  :nth-child(1)
-  > div
-  :nth-child(2)
-  > ul
-  > li {
+li {
   margin-right: 40px;
 }
