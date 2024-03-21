@@ -3,11 +3,12 @@
   z-index: 2;
   position: fixed;
   background-color: white;
+  height: auto;
 }
 .header {
   box-sizing: border-box;
   display: grid;
-  height: auto;
+
   margin: auto;
   max-width: 1264px;
 
