@@ -7,6 +7,10 @@
 
   transition: opacity 3s;
 }
+.header-wrapper .hidden {
+  opacity: 0;
+}
+
 .header {
   box-sizing: border-box;
   display: block;
@@ -38,7 +42,4 @@ a:hover {
 .button-container > a {
   background-color: transparent !important;
   color: black !important;
-}
-.hidden {
-  opacity: 0;
 }
