@@ -12,10 +12,7 @@ export default async function decorate(block) {
 
   // load footer fragment
   var currentPageUrl = window.location.href;
-  const header1 = document.getElementsByClassName("header-wrapper");
 
-  // Get the first section
-  const firstSection = document.getElementsByClassName("custom");
   let headerPath;
 
   if (currentPageUrl.includes("fr")) {
@@ -33,20 +30,29 @@ export default async function decorate(block) {
 
   block.append(header);
 
-  function onScroll() {
-    // Get the scroll position
-    const scrollPosition = window.scrollY || window.pageYOffset;
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get the header element
+    const header = document.getElementsByClassName("header-wrapper");
 
-    // Check if the scroll position is below the first section
-    if (scrollPosition >= firstSection.clientHeight) {
-      // Add a class to change the header background color
-      header1.classList.add("header-white");
-    } else {
-      // Remove the class to revert the header background color
-      header1.classList.remove("header-white");
+    // Get the first section
+    const firstSection = document.getElementsByClassName("demo");
+
+    // Function to handle scroll event
+    function onScroll() {
+      // Get the scroll position
+      const scrollPosition = window.scrollY || window.pageYOffset;
+
+      // Check if the scroll position is below the first section
+      if (scrollPosition >= firstSection.clientHeight) {
+        // Add a class to change the header background color
+        header.classList.add("header-white");
+      } else {
+        // Remove the class to revert the header background color
+        header.classList.remove("header-white");
+      }
     }
-  }
 
-  // Add scroll event listener
-  window.addEventListener("scroll", onScroll);
+    // Add scroll event listener
+    window.addEventListener("scroll", onScroll);
+  });
 }
