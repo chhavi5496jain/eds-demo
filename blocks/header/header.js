@@ -29,23 +29,23 @@ export default async function decorate(block) {
 
   block.append(header);
 }
-var selectElement = document.createElement("select");
 
-// Define options
-var options = ["Option 1", "Option 2", "Option 3"];
+let lastScrollTop = 0;
+const header = document.getElementById("header");
 
-// Loop through the options array and create option elements
-options.forEach(function (optionText) {
-  var option = document.createElement("option");
-  option.textContent = optionText;
-  selectElement.appendChild(option);
-});
+// Function to handle scroll event
+function onScroll() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-// Add event listener for change event
-selectElement.addEventListener("change", function (event) {
-  console.log("Selected option:", event.target.value);
-  // You can add any additional actions you want to perform when an option is selected
-});
+  if (scrollTop > lastScrollTop) {
+    // Scrolling down
+    header.classList.add("hidden");
+  } else {
+    // Scrolling up
+    header.classList.remove("hidden");
+  }
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+}
 
-// Append the select element to the body or any desired parent element
-document.body.appendChild(selectElement);
+// Event listener for scroll
+window.addEventListener("scroll", onScroll);

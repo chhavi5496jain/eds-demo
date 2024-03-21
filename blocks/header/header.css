@@ -4,6 +4,7 @@
   position: fixed;
   background-color: white;
   height: auto;
+  transition: top 0.3s;
 }
 .header {
   box-sizing: border-box;
@@ -36,4 +37,7 @@ a:hover {
 .button-container > a {
   background-color: transparent !important;
   color: black !important;
+}
+.hidden {
+  top: -100px; /* Adjust this value according to your header's height */
 }
