@@ -6,6 +6,8 @@ import { loadFragment } from "../fragment/fragment.js";
  * @param {Element} block The footer block element
  */
 let lastScrollTop = 0;
+let fadeTimer;
+
 const header = document.getElementById("header");
 
 export default async function decorate(block) {
@@ -32,15 +34,22 @@ export default async function decorate(block) {
 
   block.append(header);
   function onScroll() {
+    clearTimeout(fadeTimer); // Clear previous fade timer
+
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop) {
       // Scrolling down
       header.classList.add("hidden");
+      // Set timeout to remove the hidden class after 3 seconds
+      fadeTimer = setTimeout(() => {
+        header.classList.remove("hidden");
+      }, 3000);
     } else {
       // Scrolling up
       header.classList.remove("hidden");
     }
+
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
   }
 

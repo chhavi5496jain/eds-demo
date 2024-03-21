@@ -4,7 +4,8 @@
   position: fixed;
   background-color: white;
   height: auto;
-  transition: top 0.3s;
+
+  transition: opacity 3s;
 }
 .header {
   box-sizing: border-box;
