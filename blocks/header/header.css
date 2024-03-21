@@ -1,3 +1,27 @@
 .header {
   background-color: #b94a48;
 }
+
+.nav
+  > .container-wrapper
+  > .container
+  > div
+  :nth-child(1)
+  > div
+  :nth-child(2)
+  > ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.nav
+  > .container-wrapper
+  > .container
+  > div
+  :nth-child(1)
+  > div
+  :nth-child(2)
+  > ul
+  > li {
+  margin-right: 40px;
+}
