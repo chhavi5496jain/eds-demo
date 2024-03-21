@@ -29,16 +29,22 @@ export default async function decorate(block) {
 
   block.append(header);
 }
-// Create select element
-var select = document.createElement("select");
+var selectElement = document.createElement("select");
 
-// Create and add options
+// Define options
 var options = ["Option 1", "Option 2", "Option 3"];
+
+// Loop through the options array and create option elements
 options.forEach(function (optionText) {
   var option = document.createElement("option");
-  option.text = optionText;
-  select.add(option);
+  option.textContent = optionText;
+  selectElement.appendChild(option);
 });
 
-// Append select to body
-document.body.appendChild(select);
+// Add event listener for change event
+selectElement.addEventListener("change", function (event) {
+  console.log("Selected option:", event.target.value);
+});
+
+// Append the select element to the body or any desired parent element
+document.body.appendChild(selectElement);
