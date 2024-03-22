@@ -18,16 +18,27 @@
 
   padding: 0 1rem;
 }
-ul {
+.container > div :nth-child(2) > ul {
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
   padding: 0;
   margin-top: 30px;
 }
-li {
+/* ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0;
+  margin-top: 30px;
+} */
+
+.container > div :nth-child(2) > ul > li {
   margin-right: 40px;
 }
+/* li {
+  margin-right: 40px;
+} */
 li a {
   color: black !important;
   font-size: 16px;
