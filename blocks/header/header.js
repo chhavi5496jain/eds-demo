@@ -83,7 +83,7 @@ export default async function decorate(block) {
   block.append(header);
 
   window.addEventListener("scroll", function () {
-    var header = document.getElementById("header-wrapper");
+    var header = document.getElementsByClassName("header-wrapper");
     if (window.scrollY > 0) {
       header.classList.add("scrolled");
     } else {
