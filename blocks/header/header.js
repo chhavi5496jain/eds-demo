@@ -7,52 +7,35 @@ import { loadFragment } from "../fragment/fragment.js";
  */
 
 export default async function decorate(block) {
-  var listContainer = document.createElement("div");
-  document.body.appendChild(listContainer);
+  // Create a dropdown container
+  var dropdownContainer = document.createElement("div");
+  dropdownContainer.classList.add("dropdown");
+  document.body.appendChild(dropdownContainer);
 
-  // List items
-  var items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+  // Language options with corresponding links
+  var languages = [
+    { name: "English", link: "https://example.com/english" },
+    { name: "Spanish", link: "https://example.com/spanish" },
+    { name: "French", link: "https://example.com/french" },
+    { name: "German", link: "https://example.com/german" },
+    { name: "Chinese", link: "https://example.com/chinese" },
+  ];
 
-  // Create list elements and append to list container
-  items.forEach(function (itemText, index) {
-    var listItem = document.createElement("div");
-    listItem.textContent = itemText;
-    listItem.style.cursor = "pointer"; // make it look clickable
+  // Create dropdown elements and append to dropdown container
+  var dropdownList = document.createElement("select");
+  dropdownContainer.appendChild(dropdownList);
 
-    // Toggle visibility of selected item and change button text
-    listItem.addEventListener("click", function () {
-      if (listItem.classList.contains("selected")) {
-        listItem.classList.remove("selected");
-        toggleButton.textContent = "Toggle List";
-      } else {
-        listContainer
-          .querySelectorAll(".selected")
-          .forEach(function (selectedItem) {
-            selectedItem.classList.remove("selected");
-          });
-        listItem.classList.add("selected");
-        toggleButton.textContent = "Hide Selected";
-      }
-    });
-
-    listContainer.appendChild(listItem);
+  languages.forEach(function (language) {
+    var option = document.createElement("option");
+    option.textContent = language.name;
+    option.value = language.link;
+    dropdownList.appendChild(option);
   });
 
-  // Hide all items initially by hiding the container
-  listContainer.classList.add("hidden");
-
-  // Create a button
-  var toggleButton = document.createElement("button");
-  toggleButton.textContent = "Toggle List";
-  document.body.appendChild(toggleButton);
-
-  // Toggle visibility of list container when button is clicked
-  toggleButton.addEventListener("click", function () {
-    if (listContainer.classList.contains("hidden")) {
-      listContainer.classList.remove("hidden");
-    } else {
-      listContainer.classList.add("hidden");
-    }
+  // Redirect to the selected language link
+  dropdownList.addEventListener("change", function () {
+    var selectedLink = dropdownList.value;
+    window.location.href = selectedLink;
   });
 
   const headerMeta = getMetadata("nav");
