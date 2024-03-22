@@ -22,25 +22,21 @@ export default async function decorate(block) {
     listContainer.appendChild(listItem);
   });
 
-  // Hide all items initially
-  document.querySelectorAll("div").forEach(function (item) {
-    item.style.display = "none";
-  });
+  // Hide all items initially by hiding the container
+  listContainer.classList.add("hidden");
 
   // Create a button
   var toggleButton = document.createElement("button");
   toggleButton.textContent = "Toggle List";
   document.body.appendChild(toggleButton);
 
-  // Toggle visibility of list items when button is clicked
+  // Toggle visibility of list container when button is clicked
   toggleButton.addEventListener("click", function () {
-    document.querySelectorAll("ul").forEach(function (item) {
-      if (item.style.display === "none") {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    });
+    if (listContainer.classList.contains("hidden")) {
+      listContainer.classList.remove("hidden");
+    } else {
+      listContainer.classList.add("hidden");
+    }
   });
 
   const headerMeta = getMetadata("nav");
