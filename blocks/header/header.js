@@ -7,7 +7,7 @@ import { loadFragment } from "../fragment/fragment.js";
  */
 
 export default async function decorate(block) {
-  // Create a list
+  // Create a list container
   var listContainer = document.createElement("div");
   document.body.appendChild(listContainer);
 
@@ -20,21 +20,28 @@ export default async function decorate(block) {
     listItem.textContent = itemText;
     listItem.style.cursor = "pointer"; // make it look clickable
 
-    // Toggle visibility on click
-    listItem.addEventListener("click", function () {
-      if (listItem.classList.contains("hidden")) {
-        listItem.classList.remove("hidden");
-      } else {
-        listItem.classList.add("hidden");
-      }
-    });
-
     listContainer.appendChild(listItem);
   });
 
   // Hide all items initially
   document.querySelectorAll("div").forEach(function (item) {
     item.classList.add("hidden");
+  });
+
+  // Create a button
+  var toggleButton = document.createElement("button");
+  toggleButton.textContent = "Toggle List";
+  document.body.appendChild(toggleButton);
+
+  // Toggle visibility of list items when button is clicked
+  toggleButton.addEventListener("click", function () {
+    document.querySelectorAll("div").forEach(function (item) {
+      if (item.classList.contains("hidden")) {
+        item.classList.remove("hidden");
+      } else {
+        item.classList.add("hidden");
+      }
+    });
   });
 
   const headerMeta = getMetadata("nav");
