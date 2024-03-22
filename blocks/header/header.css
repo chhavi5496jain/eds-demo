@@ -5,7 +5,9 @@
   background-color: white;
   height: auto;
 }
-
+.container {
+  display: flex;
+}
 .header {
   box-sizing: border-box;
   display: block;
