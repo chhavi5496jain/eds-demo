@@ -43,3 +43,7 @@
   background-color: transparent !important;
   color: black !important;
 }
+
+.container > div:nth-child(2) > .button-container {
+  background: none;
+}
