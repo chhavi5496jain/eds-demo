@@ -7,7 +7,6 @@ import { loadFragment } from "../fragment/fragment.js";
  */
 
 export default async function decorate(block) {
-  // Create a list container
   var listContainer = document.createElement("div");
   document.body.appendChild(listContainer);
 
@@ -25,7 +24,7 @@ export default async function decorate(block) {
 
   // Hide all items initially
   document.querySelectorAll("div").forEach(function (item) {
-    item.classList.add("hidden");
+    item.style.display = "none";
   });
 
   // Create a button
@@ -36,10 +35,10 @@ export default async function decorate(block) {
   // Toggle visibility of list items when button is clicked
   toggleButton.addEventListener("click", function () {
     document.querySelectorAll("div").forEach(function (item) {
-      if (item.classList.contains("hidden")) {
-        item.classList.remove("hidden");
+      if (item.style.display === "none") {
+        item.style.display = "block";
       } else {
-        item.classList.add("hidden");
+        item.style.display = "none";
       }
     });
   });
