@@ -19,6 +19,22 @@ export default async function decorate(block) {
     listItem.textContent = itemText;
     listItem.style.cursor = "pointer"; // make it look clickable
 
+    // Toggle visibility of selected item and change button text
+    listItem.addEventListener("click", function () {
+      if (listItem.classList.contains("selected")) {
+        listItem.classList.remove("selected");
+        toggleButton.textContent = "Toggle List";
+      } else {
+        listContainer
+          .querySelectorAll(".selected")
+          .forEach(function (selectedItem) {
+            selectedItem.classList.remove("selected");
+          });
+        listItem.classList.add("selected");
+        toggleButton.textContent = "Hide Selected";
+      }
+    });
+
     listContainer.appendChild(listItem);
   });
 
