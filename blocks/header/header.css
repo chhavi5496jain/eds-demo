@@ -2,8 +2,15 @@
   width: 100%;
   z-index: 2;
   position: fixed;
-  background-color: white;
+  /* background-color: white; */
   height: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  padding: 10px 0;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 .container {
   display: flex;
@@ -50,4 +57,9 @@
 } */
 .hidden {
   display: none;
+}
+
+.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
