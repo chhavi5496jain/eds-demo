@@ -73,7 +73,7 @@
   justify-content: space-between;
 }
 
-/* .demo > div {
+.demo > div {
   width: calc(50% - 25px);
   display: flex;
   flex-flow: row nowrap;
@@ -101,11 +101,10 @@
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 8px;
-} */
-
-/* .columns > div > div > h2 {
+}
+.columns > div > div > h2 {
   margin-top: 0;
-} */
+}
 
 .black > .columns-wrapper > .columns > div > div {
   margin-top: 0;
