@@ -146,3 +146,41 @@
 .custom > .cms-content-wrapper > .cms-content {
   display: flex;
 }
+
+.custom-cms-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.custom-cms-content > div {
+  width: calc(50% - 40px);
+  flex-direction: column;
+  padding: 20px 40px 0 0;
+}
+.custom-cms-content h2 {
+  font-size: 25px;
+}
+.custom-cms-content li {
+  font-size: 16px;
+}
+.custom-cms-content .columns-img-col {
+  flex: 0 !important;
+}
+.custom-cms-content a {
+  color: #000000;
+  padding: 0;
+  background-color: transparent;
+  border: 0 none;
+  font-weight: bold;
+  font-size: 18px;
+}
+.custom-cms-content > div:nth-child(1) {
+  border-right: 1px solid #000;
+}
+.custom-cms-content > div:nth-child(2) {
+  padding: 20px 0 0 25px;
+}
+
+.custom-cms-content > div > div:nth-child(2) {
+  width: 100%;
+}
