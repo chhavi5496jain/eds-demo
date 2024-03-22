@@ -7,6 +7,18 @@ import { loadFragment } from "../fragment/fragment.js";
  */
 
 export default async function decorate(block) {
+  var ul = document.getElementsByTagName("ul")[0];
+  ul.style.display = "none";
+  var visible = false;
+  ul.parentElement.addEventListener("click", function () {
+    if (visible) {
+      ul.style.display = "none";
+    } else {
+      ul.style.display = "block";
+    }
+    visible = !visible;
+  });
+  /*
   // Create a dropdown container
   var dropdownContainer = document.createElement("div");
   dropdownContainer.classList.add("dropdown");
@@ -40,7 +52,7 @@ export default async function decorate(block) {
     var selectedLink = dropdownList.value;
     window.location.href = selectedLink;
   });
-
+*/
   const headerMeta = getMetadata("nav");
 
   block.textContent = "";
