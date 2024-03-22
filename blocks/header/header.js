@@ -34,7 +34,7 @@ export default async function decorate(block) {
 
   // Toggle visibility of list items when button is clicked
   toggleButton.addEventListener("click", function () {
-    document.querySelectorAll("div").forEach(function (item) {
+    document.querySelectorAll("ul").forEach(function (item) {
       if (item.style.display === "none") {
         item.style.display = "block";
       } else {
