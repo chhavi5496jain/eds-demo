@@ -7,14 +7,18 @@ import { loadFragment } from "../fragment/fragment.js";
  */
 
 export default async function decorate(block) {
-  var ul = document.getElementsByTagName("ul")[0];
-  ul.style.display = "none";
-  var visible = false;
+  var ul = document.querySelector("ul");
+
+  // Get the first <li> element within the <ul>
+  var firstLi = ul.querySelector("li");
+
+  // Hide/show the first <li> on click
+  var visible = true; // Initially set to true assuming it's visible by default
   ul.parentElement.addEventListener("click", function () {
     if (visible) {
-      ul.style.display = "none";
+      firstLi.style.display = "none";
     } else {
-      ul.style.display = "block";
+      firstLi.style.display = "block"; // or 'list-item' for default behavior
     }
     visible = !visible;
   });
