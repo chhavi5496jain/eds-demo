@@ -44,6 +44,6 @@
   color: black !important;
 }
 
-.container > div:nth-child(2) > .button-container {
-  background: none;
+.container > div:nth-child(2) > div:nth-child(2) > ul {
+  display: none;
 }
