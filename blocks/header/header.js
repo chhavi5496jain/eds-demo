@@ -12,15 +12,16 @@ export default async function decorate(block) {
   // Get the first <li> element within the <ul>
   var firstLi = ul.querySelector("li");
 
-  // Hide/show the first <li> on click
-  var visible = true; // Initially set to true assuming it's visible by default
+  // Initially hide the first <li>
+  firstLi.style.display = "none";
+
+  // Toggle the visibility of the first <li> on click
   ul.parentElement.addEventListener("click", function () {
-    if (visible) {
-      firstLi.style.display = "none";
+    if (firstLi.style.display === "none") {
+      firstLi.style.display = "list-item"; // or 'block' for default behavior
     } else {
-      firstLi.style.display = "block"; // or 'list-item' for default behavior
+      firstLi.style.display = "none";
     }
-    visible = !visible;
   });
   /*
   // Create a dropdown container
