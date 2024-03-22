@@ -8,6 +8,13 @@ import { loadFragment } from "../fragment/fragment.js";
 
 export default async function decorate(block) {
   const headerMeta = getMetadata("nav");
+  const countriesDropDown = document.getElementsByClassName("button-container");
+  const countriesData = {
+    Australia: "🇦🇺",
+    Canada: "🇨🇦",
+    UK: "🇬🇧",
+    USA: "🇺🇸",
+  };
   block.textContent = "";
 
   // load footer fragment
@@ -29,4 +36,14 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) header.append(fragment.firstElementChild);
 
   block.append(header);
+
+  for (let key in countriesData) {
+    let option = document.createElement("option");
+    option.setAttribute("value", data[key]);
+
+    let optionText = document.createTextNode(key);
+    option.appendChild(optionText);
+
+    countriesDropDown.appendChild(option);
+  }
 }
