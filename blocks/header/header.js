@@ -15,7 +15,10 @@ export default async function decorate(block) {
   // Language options with corresponding links
   var languages = [
     { name: "English", link: "https://example.com/english" },
-    { name: "Spanish", link: "https://example.com/spanish" },
+    {
+      name: "Spanish",
+      link: "https://main--eds-demo--chhavi5496jain.hlx.page/en/nav",
+    },
     { name: "French", link: "https://example.com/french" },
     { name: "German", link: "https://example.com/german" },
     { name: "Chinese", link: "https://example.com/chinese" },
