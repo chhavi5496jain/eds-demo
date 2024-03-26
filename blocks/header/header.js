@@ -211,12 +211,12 @@ function createContactUsForm() {
   termsLabel.appendChild(termsCheckbox);
   form.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent default form submission behavior
-    sendEmail(form); // Call sendEmail function passing the form element
+    sendEmail(form);
+    console.log("working"); // Call sendEmail function passing the form element
   });
   // Submit button
   const submitBtn = document.createElement("button");
   submitBtn.setAttribute("type", "submit");
-  sendEmail();
   submitBtn.textContent = "Submit";
 
   // Append elements
