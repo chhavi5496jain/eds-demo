@@ -81,9 +81,9 @@ export default async function decorate(block) {
   document.addEventListener("DOMContentLoaded", function () {
     // Select the <li> element
     var liElement = document.querySelector(
-      ".container > div:nth-child(1) > div:nth-child(2) > ul > li"
+      ".container > div:nth-child(1) > div:nth-child(2) > ul :nth-child(1)"
     );
-
+    console.log("li selected");
     // Check if the <li> element exists
     if (liElement) {
       // Add a click event listener to the <li> element
