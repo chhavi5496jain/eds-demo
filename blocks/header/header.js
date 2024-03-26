@@ -209,7 +209,10 @@ function createContactUsForm() {
   termsLabel.textContent =
     "I agree to the Terms of Use and acknowledge that I have read the Privacy Policy";
   termsLabel.appendChild(termsCheckbox);
-
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission behavior
+    sendEmail(form); // Call sendEmail function passing the form element
+  });
   // Submit button
   const submitBtn = document.createElement("button");
   submitBtn.setAttribute("type", "submit");
@@ -247,3 +250,17 @@ const showContactFormButton = document.createElement("button");
 showContactFormButton.textContent = "Contact Us";
 showContactFormButton.addEventListener("click", createContactUsForm);
 document.body.appendChild(showContactFormButton);
+
+function sendEmail() {
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: "sender@email_address.com",
+    Password: "Enter your password",
+    To: "receiver@email_address.com",
+    From: "sender@email_address.com",
+    Subject: "Sending Email using javascript",
+    Body: "Well that was easy!!",
+  }).then(function (message) {
+    alert("mail sent successfully");
+  });
+}
