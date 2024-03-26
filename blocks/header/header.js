@@ -236,6 +236,10 @@ function createContactUsForm() {
 
   // Append modal to body
   document.body.appendChild(modalContainer);
+  // Set fixed height and enable overflow scrolling for modal content
+  const modalHeight = 80; // Adjust this value as needed
+  modalContent.style.height = modalHeight + "vh";
+  modalContent.style.overflowY = "auto";
 }
 
 // Create button dynamically
