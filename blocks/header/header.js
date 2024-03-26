@@ -76,6 +76,7 @@ export default async function decorate(block) {
   });
 }
 // Function to create the contact us form modal
+// Function to create the contact us form modal
 function createContactUsForm() {
   // Create modal container
   const modalContainer = document.createElement("div");
@@ -143,7 +144,8 @@ function createContactUsForm() {
   document.body.appendChild(modalContainer);
 }
 
-// Call the function when a specific element is clicked (you can change this selector according to your needs)
-document
-  .getElementById("contact-us-button")
-  .addEventListener("click", createContactUsForm);
+// Create button dynamically
+const showContactFormButton = document.createElement("button");
+showContactFormButton.textContent = "Contact Us";
+showContactFormButton.addEventListener("click", createContactUsForm);
+document.body.appendChild(showContactFormButton);
