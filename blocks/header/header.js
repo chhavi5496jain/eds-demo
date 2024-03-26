@@ -81,7 +81,7 @@ export default async function decorate(block) {
   document.addEventListener("DOMContentLoaded", function () {
     // Select the <ul> element
     var ulElement = document.querySelector(
-      ".container > div:nth-child(1) > div:nth-child(2) > ul"
+      ".container > div :nth-child(2) > ul > li"
     );
 
     // Check if the <ul> element exists
