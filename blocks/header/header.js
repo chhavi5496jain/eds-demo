@@ -75,3 +75,75 @@ export default async function decorate(block) {
     }
   });
 }
+// Function to create the contact us form modal
+function createContactUsForm() {
+  // Create modal container
+  const modalContainer = document.createElement("div");
+  modalContainer.classList.add("modal-container");
+
+  // Create modal content
+  const modalContent = document.createElement("div");
+  modalContent.classList.add("modal-content");
+
+  // Close button
+  const closeBtn = document.createElement("span");
+  closeBtn.classList.add("close-btn");
+  closeBtn.innerHTML = "&times;";
+  closeBtn.addEventListener("click", () => {
+    modalContainer.remove(); // Close modal when close button is clicked
+  });
+
+  // Form heading
+  const modalHeading = document.createElement("h2");
+  modalHeading.textContent = "Contact Us";
+
+  // Form
+  const form = document.createElement("form");
+  form.classList.add("contact-form");
+
+  // Name input
+  const nameLabel = document.createElement("label");
+  nameLabel.textContent = "Name:";
+  const nameInput = document.createElement("input");
+  nameInput.setAttribute("type", "text");
+  nameInput.setAttribute("name", "name");
+  nameLabel.appendChild(nameInput);
+
+  // Email input
+  const emailLabel = document.createElement("label");
+  emailLabel.textContent = "Email:";
+  const emailInput = document.createElement("input");
+  emailInput.setAttribute("type", "email");
+  emailInput.setAttribute("name", "email");
+  emailLabel.appendChild(emailInput);
+
+  // Message input
+  const messageLabel = document.createElement("label");
+  messageLabel.textContent = "Message:";
+  const messageTextarea = document.createElement("textarea");
+  messageTextarea.setAttribute("name", "message");
+  messageLabel.appendChild(messageTextarea);
+
+  // Submit button
+  const submitBtn = document.createElement("button");
+  submitBtn.setAttribute("type", "submit");
+  submitBtn.textContent = "Submit";
+
+  // Append elements
+  modalContent.appendChild(closeBtn);
+  modalContent.appendChild(modalHeading);
+  form.appendChild(nameLabel);
+  form.appendChild(emailLabel);
+  form.appendChild(messageLabel);
+  form.appendChild(submitBtn);
+  modalContent.appendChild(form);
+  modalContainer.appendChild(modalContent);
+
+  // Append modal to body
+  document.body.appendChild(modalContainer);
+}
+
+// Call the function when a specific element is clicked (you can change this selector according to your needs)
+document
+  .getElementById("contact-us-button")
+  .addEventListener("click", createContactUsForm);
