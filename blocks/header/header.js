@@ -247,9 +247,12 @@ function createContactUsForm() {
 }
 
 // Create button dynamically
-const showContactFormButton = document.createElement("button");
-showContactFormButton.textContent = "Contact Us";
+
+let showContactFormButton = document.querySelector(
+  ".language-dropdown > div:nth-child(1) > div:nth-child(2) > ul li:last-child"
+);
 showContactFormButton.addEventListener("click", createContactUsForm);
+
 document.body.appendChild(showContactFormButton);
 
 function sendEmail() {
