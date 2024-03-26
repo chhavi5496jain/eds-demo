@@ -75,86 +75,30 @@ export default async function decorate(block) {
       }
     }
   });
-}
-/*contact us*/
-function createContactUsModal() {
-  // Create necessary elements
-  const modalContainer = document.createElement("div");
-  modalContainer.classList.add("modal-container");
 
-  const modalContent = document.createElement("div");
-  modalContent.classList.add("modal-content");
+  //contact us
 
-  const closeBtn = document.createElement("span");
-  closeBtn.classList.add("close-btn");
-  closeBtn.innerHTML = "&times;";
-  closeBtn.addEventListener("click", () => {
-    modalContainer.remove(); // Close modal when close button is clicked
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select the <ul> element
+    var ulElement = document.querySelector(
+      ".container > div:nth-child(1) > div:nth-child(2) > ul"
+    );
+
+    // Check if the <ul> element exists
+    if (ulElement) {
+      // Add a class to the <ul> element
+      ulElement.classList.add("dynamic-ul-class");
+
+      // Select all <li> elements within the <ul>
+      var liElements = ulElement.querySelectorAll("li");
+
+      // Loop through each <li> element
+      liElements.forEach(function (li) {
+        // Add a class to each <li> element
+        li.classList.add("dynamic-li-class");
+      });
+    } else {
+      console.error("UL element not found.");
+    }
   });
-
-  const modalHeading = document.createElement("h2");
-  modalHeading.textContent = "Contact Us";
-
-  const modalText = document.createElement("p");
-  modalText.textContent = "Please fill out the form below to contact us:";
-
-  const form = document.createElement("form");
-  form.setAttribute("method", "post"); // Example: set method to post
-  form.setAttribute("action", "your_contact_us_endpoint"); // Example: set action to your contact us endpoint
-
-  // Add form fields (example: name, email, message)
-  const nameLabel = document.createElement("label");
-  nameLabel.textContent = "Name:";
-  const nameInput = document.createElement("input");
-  nameInput.setAttribute("type", "text");
-  nameInput.setAttribute("name", "name");
-
-  const emailLabel = document.createElement("label");
-  emailLabel.textContent = "Email:";
-  const emailInput = document.createElement("input");
-  emailInput.setAttribute("type", "email");
-  emailInput.setAttribute("name", "email");
-
-  const messageLabel = document.createElement("label");
-  messageLabel.textContent = "Message:";
-  const messageTextarea = document.createElement("textarea");
-  messageTextarea.setAttribute("name", "message");
-
-  const submitBtn = document.createElement("input");
-  submitBtn.setAttribute("type", "submit");
-  submitBtn.setAttribute("value", "Submit");
-
-  // Append elements
-  modalContent.appendChild(closeBtn);
-  modalContent.appendChild(modalHeading);
-  modalContent.appendChild(modalText);
-  form.appendChild(nameLabel);
-  form.appendChild(nameInput);
-  form.appendChild(emailLabel);
-  form.appendChild(emailInput);
-  form.appendChild(messageLabel);
-  form.appendChild(messageTextarea);
-  form.appendChild(submitBtn);
-  modalContent.appendChild(form);
-  modalContainer.appendChild(modalContent);
-
-  // Append modal to body
-  document.body.appendChild(modalContainer);
 }
-
-var element = document.querySelector(
-  ".container > div:nth-child(1) > div:nth-child(2) > ul > li"
-);
-element.classList.add("contact-us");
-// Example: Call the function when a dynamic list item is clicked
-document.addEventListener("DOMContentLoaded", function () {
-  var dynamicListItem = document.getElementsByClassName("contact-us");
-
-  if (dynamicListItem) {
-    dynamicListItem.addEventListener("click", function () {
-      createContactUsModal();
-    });
-  } else {
-    console.error('Element with ID "dynamic-list-item" not found.');
-  }
-});
