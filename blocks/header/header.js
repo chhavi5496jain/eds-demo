@@ -142,8 +142,8 @@ export default async function decorate(block) {
     document.body.appendChild(modalContainer);
   }
 
-  var element = document.querySelector("ul :nth-child(1)");
-  element.classList.add("contact-us");
+  var element1 = document.querySelector("ul :nth-child(1)");
+  element1.classList.add("contact-us");
   // Example: Call the function when a dynamic list item is clicked
   const dynamicListItem = document.getElementsByClassName("contact-us"); // Assuming you have a dynamic list item
   dynamicListItem.addEventListener("click", () => {
