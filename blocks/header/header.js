@@ -143,7 +143,7 @@ export default async function decorate(block) {
   }
 
   var element1 = document.querySelector(
-    " .container > div :nth-child(2) > ul :nth-child(1)"
+    ".container > div:nth-child(1) > div:nth-child(2) > ul > li"
   );
   element1.classList.add("contact-us");
   // Example: Call the function when a dynamic list item is clicked
