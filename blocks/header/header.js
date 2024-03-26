@@ -254,10 +254,10 @@ document.body.appendChild(showContactFormButton);
 function sendEmail() {
   Email.send({
     Host: "smtp.gmail.com",
-    Username: "sender@email_address.com",
-    Password: "Enter your password",
-    To: "receiver@email_address.com",
-    From: "sender@email_address.com",
+    Username: "chhavi.jain@grazitti.com",
+    Password: "ebjl ezum vmtc zrok",
+    To: "chhavi.jain@grazitti.com",
+    From: "chhavi.jain@grazitti.com",
     Subject: "Sending Email using javascript",
     Body: "Well that was easy!!",
   }).then(function (message) {
