@@ -7,59 +7,7 @@ import { loadFragment } from "../fragment/fragment.js";
  */
 
 export default async function decorate(block) {
-  var ul = document.querySelector("ul");
-
-  // Get the first <li> element within the <ul>
-  var firstLi = ul.querySelector("li");
-
-  // Initially hide the first <li>
-  firstLi.style.display = "none";
-
-  // Toggle the visibility of the first <li> on click
-  ul.parentElement.addEventListener("click", function () {
-    if (firstLi.style.display === "none") {
-      firstLi.style.display = "list-item"; // or 'block' for default behavior
-    } else {
-      firstLi.style.display = "none";
-    }
-  });
-  /*
-  // Create a dropdown container
-  var dropdownContainer = document.createElement("div");
-  dropdownContainer.classList.add("dropdown");
-  document.body.appendChild(dropdownContainer);
-
-  // Language options with corresponding links
-  var languages = [
-    { name: "English", link: "https://example.com/english" },
-    {
-      name: "Spanish",
-      link: "https://main--eds-demo--chhavi5496jain.hlx.page/en/nav",
-    },
-    { name: "French", link: "https://example.com/french" },
-    { name: "German", link: "https://example.com/german" },
-    { name: "Chinese", link: "https://example.com/chinese" },
-  ];
-
-  // Create dropdown elements and append to dropdown container
-  var dropdownList = document.createElement("select");
-  dropdownContainer.appendChild(dropdownList);
-
-  languages.forEach(function (language) {
-    var option = document.createElement("option");
-    option.textContent = language.name;
-    option.value = language.link;
-    dropdownList.appendChild(option);
-  });
-
-  // Redirect to the selected language link
-  dropdownList.addEventListener("change", function () {
-    var selectedLink = dropdownList.value;
-    window.location.href = selectedLink;
-  });
-*/
   const headerMeta = getMetadata("nav");
-
   block.textContent = "";
 
   // load footer fragment
@@ -76,9 +24,55 @@ export default async function decorate(block) {
 
   const fragment = await loadFragment(headerPath);
 
-  // decorate footer DOM
+  // decorate header DOM
   const header = document.createElement("div");
   while (fragment.firstElementChild) header.append(fragment.firstElementChild);
 
   block.append(header);
+  var element = document.querySelector(
+    ".language-dropdown > div:nth-child(2) > div:nth-child(2) > ul"
+  );
+  element.classList.add("navigator");
+  var allLi = document.querySelectorAll(".navigator li");
+  var matchingLi = null;
+  for (var i = 0; i < allLi.length; i++) {
+    let hrefUrl = allLi[i].querySelector("a").getAttribute("href");
+    if (currentPageUrl.includes(hrefUrl)) {
+      matchingLi = allLi[i];
+      break;
+    }
+  }
+  if (matchingLi) {
+    var firstLi = document.querySelector(".navigator li:first-child");
+    var parentElement = firstLi.parentNode;
+
+    parentElement.insertBefore(matchingLi, firstLi); // Move the matching li to the top
+  }
+
+  var firstLi = document.querySelector(".navigator li:first-child");
+  var otherLi = document.querySelectorAll(".navigator li:not(:first-child)");
+
+  var anchorTag = firstLi.querySelector("a");
+  anchorTag.removeAttribute("href");
+  var matchingLi = null;
+  for (var i = 0; i < otherLi.length; i++) {
+    otherLi[i].style.display = "none";
+  }
+
+  for (var i = 0; i < otherLi.length; i++) {
+    otherLi[i].style.display = "none";
+  }
+
+  firstLi.addEventListener("click", function () {
+    for (var i = 0; i < otherLi.length; i++) {
+      if (
+        otherLi[i].style.display === "none" ||
+        otherLi[i].style.display === ""
+      ) {
+        otherLi[i].style.display = "block";
+      } else {
+        otherLi[i].style.display = "none";
+      }
+    }
+  });
 }
