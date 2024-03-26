@@ -147,7 +147,14 @@ var element = document.querySelector(
 );
 element.classList.add("contact-us");
 // Example: Call the function when a dynamic list item is clicked
-const dynamicListItem = document.getElementsByClassName("contact-us"); // Assuming you have a dynamic list item
-dynamicListItem.addEventListener("click", () => {
-  createContactUsModal();
+document.addEventListener("DOMContentLoaded", function () {
+  var dynamicListItem = document.getElementsByClassName("contact-us");
+
+  if (dynamicListItem) {
+    dynamicListItem.addEventListener("click", function () {
+      createContactUsModal();
+    });
+  } else {
+    console.error('Element with ID "dynamic-list-item" not found.');
+  }
 });
