@@ -55,14 +55,10 @@
   color: black !important;
 }
 
-/* .container > div:nth-child(2) > div:nth-child(2) > ul {
+.container > div:nth-child(2) > div:nth-child(2) > ul {
   display: flex;
   flex-direction: column;
-} */
+}
 .hidden {
   display: none;
-}
-
-ul.navigator {
-  flex-direction: column !important;
 }
