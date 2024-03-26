@@ -102,28 +102,113 @@ function createContactUsForm() {
   const form = document.createElement("form");
   form.classList.add("contact-form");
 
-  // Name input
-  const nameLabel = document.createElement("label");
-  nameLabel.textContent = "Name:";
-  const nameInput = document.createElement("input");
-  nameInput.setAttribute("type", "text");
-  nameInput.setAttribute("name", "name");
-  nameLabel.appendChild(nameInput);
+  // Choose Department
+  const departmentLabel = document.createElement("label");
+  departmentLabel.textContent = "Choose your department *:";
+  const departmentSelect = document.createElement("select");
+  // Populate options for department
+  const departmentOptions = [
+    "Sales",
+    "Customer Service",
+    "Technical Support",
+    "General Inquiry",
+  ];
+  departmentOptions.forEach((option) => {
+    const optionElement = document.createElement("option");
+    optionElement.textContent = option;
+    departmentSelect.appendChild(optionElement);
+  });
+  departmentSelect.setAttribute("name", "department");
+  departmentLabel.appendChild(departmentSelect);
 
-  // Email input
+  // Choose Product Type
+  const productTypeLabel = document.createElement("label");
+  productTypeLabel.textContent = "Choose Your Product Type *:";
+  const productTypeInput = document.createElement("input");
+  productTypeInput.setAttribute("type", "text");
+  productTypeInput.setAttribute("name", "productType");
+  productTypeLabel.appendChild(productTypeInput);
+
+  // Country
+  const countryLabel = document.createElement("label");
+  countryLabel.textContent = "Country:";
+  const countryInput = document.createElement("input");
+  countryInput.setAttribute("type", "text");
+  countryInput.setAttribute("name", "country");
+  countryLabel.appendChild(countryInput);
+
+  // Location
+  const locationLabel = document.createElement("label");
+  locationLabel.textContent = "Location:";
+  const locationInput = document.createElement("input");
+  locationInput.setAttribute("type", "text");
+  locationInput.setAttribute("name", "location");
+  locationLabel.appendChild(locationInput);
+
+  // Company Name
+  const companyNameLabel = document.createElement("label");
+  companyNameLabel.textContent = "Company Name:";
+  const companyNameInput = document.createElement("input");
+  companyNameInput.setAttribute("type", "text");
+  companyNameInput.setAttribute("name", "companyName");
+  companyNameLabel.appendChild(companyNameInput);
+
+  // First Name
+  const firstNameLabel = document.createElement("label");
+  firstNameLabel.textContent = "First Name:";
+  const firstNameInput = document.createElement("input");
+  firstNameInput.setAttribute("type", "text");
+  firstNameInput.setAttribute("name", "firstName");
+  firstNameLabel.appendChild(firstNameInput);
+
+  // Last Name
+  const lastNameLabel = document.createElement("label");
+  lastNameLabel.textContent = "Last Name:";
+  const lastNameInput = document.createElement("input");
+  lastNameInput.setAttribute("type", "text");
+  lastNameInput.setAttribute("name", "lastName");
+  lastNameLabel.appendChild(lastNameInput);
+
+  // Email
   const emailLabel = document.createElement("label");
-  emailLabel.textContent = "Email:";
+  emailLabel.textContent = "E-mail:";
   const emailInput = document.createElement("input");
   emailInput.setAttribute("type", "email");
   emailInput.setAttribute("name", "email");
   emailLabel.appendChild(emailInput);
 
-  // Message input
-  const messageLabel = document.createElement("label");
-  messageLabel.textContent = "Message:";
-  const messageTextarea = document.createElement("textarea");
-  messageTextarea.setAttribute("name", "message");
-  messageLabel.appendChild(messageTextarea);
+  // Phone Number
+  const phoneLabel = document.createElement("label");
+  phoneLabel.textContent = "Phone Number:";
+  const phoneInput = document.createElement("input");
+  phoneInput.setAttribute("type", "tel");
+  phoneInput.setAttribute("name", "phone");
+  phoneLabel.appendChild(phoneInput);
+
+  // Zip/Postal code
+  const zipLabel = document.createElement("label");
+  zipLabel.textContent = "Zip/Postal code:";
+  const zipInput = document.createElement("input");
+  zipInput.setAttribute("type", "text");
+  zipInput.setAttribute("name", "zip");
+  zipLabel.appendChild(zipInput);
+
+  // Comments
+  const commentsLabel = document.createElement("label");
+  commentsLabel.textContent = "Comments:";
+  const commentsTextarea = document.createElement("textarea");
+  commentsTextarea.setAttribute("name", "comments");
+  commentsLabel.appendChild(commentsTextarea);
+
+  // Terms and conditions
+  const termsCheckbox = document.createElement("input");
+  termsCheckbox.setAttribute("type", "checkbox");
+  termsCheckbox.setAttribute("name", "terms");
+  termsCheckbox.setAttribute("required", "true"); // Required field
+  const termsLabel = document.createElement("label");
+  termsLabel.textContent =
+    "I agree to the Terms of Use and acknowledge that I have read the Privacy Policy";
+  termsLabel.appendChild(termsCheckbox);
 
   // Submit button
   const submitBtn = document.createElement("button");
@@ -133,9 +218,18 @@ function createContactUsForm() {
   // Append elements
   modalContent.appendChild(closeBtn);
   modalContent.appendChild(modalHeading);
-  form.appendChild(nameLabel);
+  form.appendChild(departmentLabel);
+  form.appendChild(productTypeLabel);
+  form.appendChild(countryLabel);
+  form.appendChild(locationLabel);
+  form.appendChild(companyNameLabel);
+  form.appendChild(firstNameLabel);
+  form.appendChild(lastNameLabel);
   form.appendChild(emailLabel);
-  form.appendChild(messageLabel);
+  form.appendChild(phoneLabel);
+  form.appendChild(zipLabel);
+  form.appendChild(commentsLabel);
+  form.appendChild(termsLabel);
   form.appendChild(submitBtn);
   modalContent.appendChild(form);
   modalContainer.appendChild(modalContent);
