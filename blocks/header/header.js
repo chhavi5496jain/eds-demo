@@ -216,6 +216,7 @@ function createContactUsForm() {
   // Submit button
   const submitBtn = document.createElement("button");
   submitBtn.setAttribute("type", "submit");
+  sendEmail();
   submitBtn.textContent = "Submit";
 
   // Append elements
@@ -254,7 +255,7 @@ document.body.appendChild(showContactFormButton);
 function sendEmail() {
   Email.send({
     Host: "smtp.gmail.com",
-    Username: "chhavi.jain@grazitti.com",
+    Username: "chhavi.jain",
     Password: "ebjl ezum vmtc zrok",
     To: "chhavi.jain@grazitti.com",
     From: "chhavi.jain@grazitti.com",
