@@ -103,6 +103,9 @@
 }
 
 /* Form styling (customize as needed) */
+.contact-form label {
+  font-size: 13px;
+}
 .contact-form label :nth-child(1) {
   display: block;
 }
