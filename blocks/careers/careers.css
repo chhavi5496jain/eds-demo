@@ -1,9 +1,9 @@
-.careers_who .columns-wrapper {
+.careers .columns-wrapper {
   background-color: #f3f3f3;
 }
-.careers_who > .columns-wrapper > .columns > div :nth-child(1) > h2 {
+.careers > .columns-wrapper > .columns > div :nth-child(1) > h2 {
   font-size: 25px;
 }
-.careers_who > .columns-wrapper > .columns > div :nth-child(1) > p {
+.careers > .columns-wrapper > .columns > div :nth-child(1) > p {
   font-size: 16px;
 }
