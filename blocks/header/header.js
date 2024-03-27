@@ -127,17 +127,10 @@ function createContactUsForm() {
   const form = document.createElement("form");
   form.classList.add("contact-form");
 
-  // Create a span element
-  const spanElement = document.createElement("span");
-
-  // Create the label element
+  // Choose Department
   const departmentLabel = document.createElement("label");
   departmentLabel.textContent = "Choose your department *:";
-
-  // Create the select element
   const departmentSelect = document.createElement("select");
-  departmentSelect.setAttribute("name", "department");
-
   // Populate options for department
   const departmentOptions = [
     "Sales",
@@ -145,22 +138,13 @@ function createContactUsForm() {
     "Technical Support",
     "General Inquiry",
   ];
-
   departmentOptions.forEach((option) => {
     const optionElement = document.createElement("option");
     optionElement.textContent = option;
     departmentSelect.appendChild(optionElement);
   });
-
-  // Append the select element to the label
+  departmentSelect.setAttribute("name", "department");
   departmentLabel.appendChild(departmentSelect);
-
-  // Append the label to the span element
-  spanElement.appendChild(departmentLabel);
-
-  // Append the span element wherever you want in the DOM
-  // For example, if you want to append it to the body:
-  document.body.appendChild(spanElement);
 
   // Choose Product Type
   const productTypeLabel = document.createElement("label");
