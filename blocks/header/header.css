@@ -84,7 +84,7 @@
   position: relative;
   z-index: 1;
   padding: 20px;
-  animation: scrolldown 2s;
+  animation: scrolldown 2s linear infinite;
   background-color: #fff;
 }
 
@@ -145,4 +145,13 @@
 
 .contact-form button:hover {
   background-color: #45a049;
+}
+
+@keyframes scrolldown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }
