@@ -115,7 +115,7 @@
   display: block;
   width: 100%;
 }
-.contact-form > label :nth-child(12) {
+.contact-form :nth-child(12) {
   display: none;
 }
 /* .contact-form :nth-last-child() {
