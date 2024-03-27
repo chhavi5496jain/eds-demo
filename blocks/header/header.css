@@ -112,10 +112,10 @@
   background-repeat: no-repeat;
   background-position: right center; */
 }
-/* .contact-form label :nth-child(1) {
+.contact-form :nth-child(1) {
   display: block;
   width: 100%;
-} */
+}
 .contact-form :nth-last-child() {
   display: inline-flex;
 }
