@@ -1,4 +1,7 @@
-main .careers .columns-wrapper {
+.careers {
+  display: none;
+}
+.careers .columns-wrapper {
   background-color: #f3f3f3;
 }
 .careers > .columns-wrapper > .columns > div :nth-child(1) > h2 {
