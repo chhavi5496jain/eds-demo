@@ -115,8 +115,7 @@
   display: block;
   width: 100%;
 }
-.contact-form :nth-child(12) {
-  display: none;
+.contact-form :nth-child(12) > input {
 }
 /* .contact-form :nth-last-child() {
   display: inline-flex;
@@ -147,9 +146,6 @@
   font-weight: bold;
 }
 
-.contact-form button:hover {
-  background-color: #45a049;
-}
 @keyframes scrolldown {
   0% {
     transform: translateY(-100vh);
