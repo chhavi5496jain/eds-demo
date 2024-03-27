@@ -108,17 +108,15 @@
   background-color: var(--light-grey);
 }
 .contact-form > label > select {
-  /* background-image: url(../data/i/caret.png);
-  background-repeat: no-repeat;
-  background-position: right center; */
+  padding: 10px 10px 10px 0;
 }
 .contact-form :nth-child(1) {
   display: block;
   width: 100%;
 }
-.contact-form :nth-last-child() {
+/* .contact-form :nth-last-child() {
   display: inline-flex;
-}
+} */
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
