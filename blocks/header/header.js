@@ -128,7 +128,8 @@ function createContactUsForm() {
   form.classList.add("contact-form");
 
   // Choose Department
-  const departmentLabel = document.createElement("div");
+  const spanElement = document.createElement("span");
+  const departmentLabel = document.createElement("label");
   departmentLabel.textContent = "Choose your department *:";
   const departmentSelect = document.createElement("select");
   // Populate options for department
@@ -145,6 +146,8 @@ function createContactUsForm() {
   });
   departmentSelect.setAttribute("name", "department");
   departmentLabel.appendChild(departmentSelect);
+  spanElement.appendChild(departmentLabel);
+  document.body.appendChild(spanElement);
 
   // Choose Product Type
   const productTypeLabel = document.createElement("label");
