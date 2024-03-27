@@ -103,10 +103,8 @@
 }
 
 /* Form styling (customize as needed) */
-.contact-form label {
-  /* width: calc(100% - 40px);
-  margin-left: 20px;
-  position: relative; */
+.contact-form label :nth-child(1) {
+  display: block;
 }
 
 .contact-form input[type="text"],
