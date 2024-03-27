@@ -1,5 +1,6 @@
 import { getMetadata } from "../../scripts/aem.js";
 import { loadFragment } from "../fragment/fragment.js";
+//import { SMTPClient } from '../../node_modules/emailjs/email.js';
 
 /**
  * loads and decorates the footer
@@ -17,8 +18,9 @@ export default async function decorate(block) {
   if (currentPageUrl.includes("fr")) {
     headerPath = headerMeta.footer || "/fr/nav";
   } else if (currentPageUrl.includes("en")) {
-    console.log("The URL contains 'EN'.");
     headerPath = headerMeta.footer || "/en/nav";
+  } else if (currentPageUrl.includes("es")) {
+    headerPath = headerMeta.footer || "/en/es";
   }
 
   const fragment = await loadFragment(headerPath);
@@ -74,14 +76,37 @@ export default async function decorate(block) {
       }
     }
   });
+  let showContactFormButton = document.querySelector(
+    ".language-dropdown > div:nth-child(1) > div:nth-child(2) > ul li:last-child"
+  );
+  showContactFormButton.addEventListener("click", createContactUsForm);
+  /* sendemail();
+function sendemail() {
+      var userid = "mCvtaVuC9TqMOTdhp"
+      emailjs.init(userid);
+      var thename = "Sahil Dhiman";
+      var themail = "sahild1908@grazitti.com";
+      var themsg = "This is Demo Email";
+      var contactdetail = {
+                from_name: thename,
+                to_email:  themail,
+                message: themsg
+              };
+
+              emailjs.send('service_5qy284e', 'template_edxy78y', contactdetail).then(function (res) {
+                alert("Email Sent Successfully");
+              },
+                reason => {
+                  alert("Error Occur");
+                })
+    }*/
 }
-// Function to create the contact us form modal
-// Function to create the contact us form modal
+
 function createContactUsForm() {
   // Create modal container
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal-container");
-
+  console.log("Inside create contact us");
   // Create modal content
   const modalContent = document.createElement("div");
   modalContent.classList.add("modal-content");
@@ -209,11 +234,7 @@ function createContactUsForm() {
   termsLabel.textContent =
     "I agree to the Terms of Use and acknowledge that I have read the Privacy Policy";
   termsLabel.appendChild(termsCheckbox);
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission behavior
-    sendEmail(form);
-    console.log("working"); // Call sendEmail function passing the form element
-  });
+
   // Submit button
   const submitBtn = document.createElement("button");
   submitBtn.setAttribute("type", "submit");
@@ -244,27 +265,4 @@ function createContactUsForm() {
   const modalHeight = 80; // Adjust this value as needed
   modalContent.style.height = modalHeight + "vh";
   modalContent.style.overflowY = "auto";
-}
-
-// Create button dynamically
-
-let showContactFormButton = document.querySelector(
-  ".language-dropdown > div:nth-child(1) > div:nth-child(2) > ul li:last-child"
-);
-showContactFormButton.addEventListener("click", createContactUsForm);
-
-document.body.appendChild(showContactFormButton);
-
-function sendEmail() {
-  Email.send({
-    Host: "smtp.gmail.com",
-    Username: "chhavi.jain",
-    Password: "ebjl ezum vmtc zrok",
-    To: "chhavi.jain@grazitti.com",
-    From: "chhavi.jain@grazitti.com",
-    Subject: "Sending Email using javascript",
-    Body: "Well that was easy!!",
-  }).then(function (message) {
-    alert("mail sent successfully");
-  });
 }
