@@ -90,6 +90,9 @@
 
 .modal-content h2 {
   font-size: 20px;
+  margin: 0 0 20px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #000;
 }
 /* Close button */
 .close-btn {
