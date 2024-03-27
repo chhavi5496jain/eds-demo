@@ -86,6 +86,7 @@
   padding: 20px;
   animation: scrolldown 2s;
   background-color: #fff;
+  height: 100%;
 }
 
 .modal-content h2 {
@@ -113,6 +114,9 @@
 .contact-form :nth-child(1) {
   display: block;
   width: 100%;
+}
+.contact-form > label :nth-child(12) {
+  display: none;
 }
 /* .contact-form :nth-last-child() {
   display: inline-flex;
