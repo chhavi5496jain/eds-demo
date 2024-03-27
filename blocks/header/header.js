@@ -236,20 +236,9 @@ function createContactUsForm() {
   termsLabel.appendChild(termsCheckbox);
 
   // Submit button
-  // Create a div element
-  const divElement = document.createElement("div");
-
-  // Create the submit button
   const submitBtn = document.createElement("button");
   submitBtn.setAttribute("type", "submit");
   submitBtn.textContent = "Submit";
-
-  // Append the submit button to the div
-  divElement.appendChild(submitBtn);
-
-  // Append the div element wherever you want in the DOM
-  // For example, if you want to append it to the body:
-  document.body.appendChild(divElement);
 
   // Append elements
   modalContent.appendChild(closeBtn);
