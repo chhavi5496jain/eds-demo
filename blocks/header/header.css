@@ -104,9 +104,9 @@
 
 /* Form styling (customize as needed) */
 .contact-form label {
-  width: calc(100% - 40px);
+  /* width: calc(100% - 40px);
   margin-left: 20px;
-  position: relative;
+  position: relative; */
 }
 
 .contact-form input[type="text"],
