@@ -88,6 +88,9 @@
   background-color: #fff;
 }
 
+.modal-content h2 {
+  font-size: 20px;
+}
 /* Close button */
 .close-btn {
   position: absolute;
