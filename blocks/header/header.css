@@ -105,9 +105,16 @@
 /* Form styling (customize as needed) */
 .contact-form label {
   font-size: 13px;
+  background-color: var(--light-grey);
+}
+.contact-form > label > select {
+  /* background-image: url(../data/i/caret.png);
+  background-repeat: no-repeat;
+  background-position: right center; */
 }
 .contact-form label :nth-child(1) {
   display: block;
+  width: 100%;
 }
 
 .contact-form input[type="text"],
