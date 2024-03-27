@@ -128,7 +128,7 @@ function createContactUsForm() {
   form.classList.add("contact-form");
 
   // Choose Department
-  const departmentLabel = document.createElement("label");
+  const departmentLabel = document.createElement("div");
   departmentLabel.textContent = "Choose your department *:";
   const departmentSelect = document.createElement("select");
   // Populate options for department
