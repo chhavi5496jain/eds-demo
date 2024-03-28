@@ -105,9 +105,7 @@
 .columns > div > div > h2 {
   margin-top: 0;
 }
-.black {
-  display: none;
-}
+
 .black > .columns-wrapper > .columns > div > div {
   margin-top: 0;
 }
@@ -184,4 +182,25 @@
 
 .custom-cms-content > div > div:nth-child(2) {
   width: 100%;
+}
+
+.careers .columns-wrapper {
+  background-color: #f3f3f3;
+}
+.careers > .columns-wrapper > .columns > div :nth-child(1) > h2 {
+  font-size: 25px;
+}
+.careers > .columns-wrapper > .columns > div :nth-child(1) > p {
+  font-size: 16px;
+}
+
+.people > .columns-wrapper > .columns > div :nth-child(1) > {
+  border-left: 1px solid #000;
+  padding-left: 50px;
+}
+.people > .columns-wrapper > .columns > div :nth-child(1) > h2 {
+  font-size: 25px;
+}
+.people > .columns-wrapper > .columns > div :nth-child(1) > p {
+  font-size: 16px;
 }
