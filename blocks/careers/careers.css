@@ -1,4 +1,4 @@
-main .careers .columns-wrapper {
+.careers .columns-wrapper {
   background-color: #f3f3f3;
 }
 .careers > .columns-wrapper > .columns > div :nth-child(1) > h2 {
@@ -6,9 +6,6 @@ main .careers .columns-wrapper {
 }
 .careers > .columns-wrapper > .columns > div :nth-child(1) > p {
   font-size: 16px;
-}
-.career {
-  display: none;
 }
 
 #who-we-are {
