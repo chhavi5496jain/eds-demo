@@ -105,7 +105,9 @@
 .columns > div > div > h2 {
   margin-top: 0;
 }
-
+.black {
+  display: none;
+}
 .black > .columns-wrapper > .columns > div > div {
   margin-top: 0;
 }
